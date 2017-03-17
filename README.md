@@ -1,2 +1,3 @@
-# get-clean_final_project
-Final project for the "Data getting and Cleaning" by JHU
+## The final project for the course 
+# Working with wearable computers dataset
+This work contains data from 
