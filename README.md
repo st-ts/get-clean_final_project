@@ -3,8 +3,13 @@
 
 The code for merging and modifying data is run_analisis.R.
 In order to run it, you need to specify the folder where you have unzipped the data. 
-The ordering of the steps for the assignment was modified for convinience. The resulting code does the following:
-1. Reads the data from the folder
+The ordering of the steps for the assignment was slightly modified for convinience. The code does the following:
+1. Reads the data from the specified folder
 2. Merges test data and train data
 3. Adds names to the columns of the data
-
+4. Changes numeric labels to descriptive ones in y\_ datasets
+5. Adds names to columns
+6. Selects only columns with mean and standard deviation data
+7. Adds subject data and activity labels to the dataset
+8. Calculates means of each variables for every subject / activity combination
+9. Writes the resulting dataset to txt file
