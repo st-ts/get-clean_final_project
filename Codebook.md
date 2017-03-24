@@ -42,7 +42,8 @@ __mean()__ - represents the mean value
 __std()__ - represents the standard deviation
 
 
-## Additional vectors obtained by averaging the signals in a signal window  based on an angle between two vectors
+## Additional variables
+_Vectors obtained by averaging the signals in a signal window  based on an angle between two vectors_
 __gravityMean__ - for gravity
 
 __BodyAccMean__ - for __BodyAcc__
