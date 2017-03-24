@@ -7,7 +7,8 @@
 library(stringr)
 library(dplyr)
 # you can uncomment this line and add the directory where you
-# unpacked the UCI HAR data
+# unpacked the UCI HAR data if you want to run the analysis from
+# this script:
 # path <- ""
 
 run_analysis <- function (path) {
@@ -64,3 +65,7 @@ run_analysis <- function (path) {
         write.table(x_means, "activity_subject_means.txt", sep="\t")
 }
 
+# This line actually runs the function above using the path 
+# provided. Uncomment it if you want to run the analysis from
+# this script:
+# run_analysis(path)
