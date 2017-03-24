@@ -3,55 +3,35 @@
 Dataset has 71 variables, the names of which can be decomposed into several elements to specify the type of data
 
 ## First letter
-__t__ - represents time domain, captured at a constant rate of 50 Hz.
+_Applies to every variable in the set except for __gravityMean__._
+__t__ - represents time domain, captured at a constant rate of 50 Hz; hen they were filtered using a median filter and a 3rd order low pass Butterworth filter with a corner frequency of 20 Hz to remove noise.
 __f__ - represents frequency domain (after apptication of Fast Fourier Transform)
 
-## The word after 1st letter
+## Core variables
+### Spatial variable followed by X, Y, Z:
+_For each of the spatial variable there are 3 values for different dimentions: __X__, __Y__, __Z__._
+__BodyAcc__ - data from accelerometer separated into Body and Gravity (this is a Body part) by using low pass Butterworth filter with a corner frequency of 0.3 Hz
+__GravityAcc__ - data from accelerometer separated into Body and Gravity (this is a Gravity part) by using low pass Butterworth filter with a corner frequency of 0.3 Hz
+__BodyAccJerk__ - data computed from the body linear acceleration to derive Jerk signal
+__BodyGyro__ - data from gyroscope (angular velocity)
+__BodyGyroJerk__ - Jerk computed form angular velocity (data from gyroscope)
 
-## Coordinates
+### Non-spatial variables
+__BodyAccMag__ - Magnitude computed from the X, Y and Z values of __BodyAcc__ using the Euclidean norm
+__GravityAccMag__ - Magnitude computed from the X, Y and Z values of __GravityAcc__ using the Euclidean norm
+__BodyAccJerkMag__ - Magnitude computed from the X, Y and Z values of __BodyAccJerk__ using the Euclidean norm
+__BodyGyroMag__ - Magnitude computed from the X, Y and Z values of  __BodyGyro__ using the Euclidean norm
+__BodyGyroJerkMag__ - Magnitude computed from the X, Y and Z values of __BodyGyroJerk__ using the Euclidean norm
 
-## The las word
+### Specification of the core variable type (last word):
 __mean()__ - represents the mean value
 __std()__ - represents the standard deviation
 
-
-The features selected for this database come from the accelerometer and gyroscope 3-axial raw signals tAcc-XYZ and tGyro-XYZ. These time domain signals (prefix 't' to denote time) were captured at a constant rate of 50 Hz. Then they were filtered using a median filter and a 3rd order low pass Butterworth filter with a corner frequency of 20 Hz to remove noise. Similarly, the acceleration signal was then separated into body and gravity acceleration signals (tBodyAcc-XYZ and tGravityAcc-XYZ) using another low pass Butterworth filter with a corner frequency of 0.3 Hz. 
-
-Subsequently, the body linear acceleration and angular velocity were derived in time to obtain Jerk signals (tBodyAccJerk-XYZ and tBodyGyroJerk-XYZ). Also the magnitude of these three-dimensional signals were calculated using the Euclidean norm (tBodyAccMag, tGravityAccMag, tBodyAccJerkMag, tBodyGyroMag, tBodyGyroJerkMag). 
-
-Finally a Fast Fourier Transform (FFT) was applied to some of these signals producing fBodyAcc-XYZ, fBodyAccJerk-XYZ, fBodyGyro-XYZ, fBodyAccJerkMag, fBodyGyroMag, fBodyGyroJerkMag. (Note the 'f' to indicate frequency domain signals). 
-
-These signals were used to estimate variables of the feature vector for each pattern:  
-'-XYZ' is used to denote 3-axial signals in the X, Y and Z directions.
-
-tBodyAcc-XYZ
-tGravityAcc-XYZ
-tBodyAccJerk-XYZ
-tBodyGyro-XYZ
-tBodyGyroJerk-XYZ
-tBodyAccMag
-tGravityAccMag
-tBodyAccJerkMag
-tBodyGyroMag
-tBodyGyroJerkMag
-fBodyAcc-XYZ
-fBodyAccJerk-XYZ
-fBodyGyro-XYZ
-fBodyAccMag
-fBodyAccJerkMag
-fBodyGyroMag
-fBodyGyroJerkMag
-
-The set of variables that were estimated from these signals are: 
-
-mean(): Mean value
-std(): Standard deviation
+## Additional vectors obtained by averaging the signals in a signal window  based on an angle between two vectors
+__gravityMean__ - for gravity
+__BodyAccMean__ - for __BodyAcc__
+__BodyAccJerkMean__ - for __BodyAccJerk__
+__BodyGyroMean__ - for __BodyGyro__
+__BodyGyroJerkMean__ - for __BodyGyroJerk__
 
 
-Additional vectors obtained by averaging the signals in a signal window sample. These are used on the angle() variable:
-
-gravityMean
-tBodyAccMean
-tBodyAccJerkMean
-tBodyGyroMean
-tBodyGyroJerkMean
