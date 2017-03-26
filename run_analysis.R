@@ -62,7 +62,7 @@ run_analysis <- function (path) {
                 summarise_all(mean)
         
         # save the resulting data to txt file
-        write.table(x_means, "activity_subject_means.txt", sep="\t")
+        write.table(x_means, "activity_subject_means.txt", sep="\t", row.name=FALSE)
 }
 
 # This line actually runs the function above using the path 
